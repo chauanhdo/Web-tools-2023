@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunrise and sunset</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(154, 209, 253);
+        overflow: hidden;
+        animation: sky 24s infinite linear;
+
+      }
+      @keyframes sky {
+        0% {
+          background-color: rgb(145, 127, 179);
+        }
+        10% {
+          background-color: rgb(229, 190, 236);
+        }
+        50% {
+          background-color: rgb(255, 227, 227);
+        }
+        70% {
+          background-color: rgb(229, 190, 236);
+        }
+        100% {
+          background-color: rgb(145, 127, 179);
+        }
+      }
+      #land {
+        width: 100%;
+        height: 20%;
+        background-color: #93B5C6;
+        position: absolute;
+        bottom: 0;
+      }
+      .hill {
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-left: 280px solid transparent;
+        border-right: 280px solid transparent;
+        border-bottom: 280px solid #67729D;
+        bottom: 20%;
+      }
+      .hill1 {
+        border-left: 200px solid transparent;
+        border-right: 200px solid transparent;
+        border-bottom: 200px solid #67729D;
+        margin-left: 20%;
+      }
+      .hill2 {
+        border-left: 330px solid transparent;
+        border-right: 330px solid transparent;
+        border-bottom: 330px solid #67729D;
+        margin-left: 50%;
+      }
+      .hill3 {
+        border-left: 240px solid transparent;
+        border-right: 240px solid transparent;
+        border-bottom: 240px solid #67729D;
+        margin-left: 35%;
+      }
+      .hill4 {
+        border-left: 180px solid transparent;
+        border-right: 180px solid transparent;
+        border-bottom: 180px solid #67729D;
+        margin-left: 76%;
+      }
+      #sun {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(255, 197, 197);
+        border-radius: 50%;
+        border: 2px solid rosybrown;
+        position: absolute;
+        left: 77%;
+        bottom: 40%;
+        animation: sun 24s infinite linear;
+      }
+      @keyframes sun {
+        0% {
+          transform: translate(-20%, -20%);
+        }
+        10% {
+          transform: translate(-15%, -50%);
+        }
+        20% {
+          transform: translate(-50%, -100%);
+        }
+        30% {
+          transform: translate(-100%, -150%);
+        }
+        40% {
+          transform: translate(-200%, -200%);
+        }
+        50% {
+          transform: translate(-300%, -220%);
+        }
+        60% {
+          transform: translate(-400%, -210%);
+        }
+        70% {
+          transform: translate(-500%, -200%);
+        }
+        80% {
+          transform: translate(-600%, -150%);
+        }
+        90% {
+          transform: translate(-700%, -50%);
+        }
+        100% {
+          transform: translate(-730%, -10%);
+        }
+      }
+      .cloud {
+        top: 100px;
+        left: 200px;
+        width: 320px;
+        height: 100px;
+        background-color: white;
+        border-radius: 100px;
+        position: relative;
+        z-index: -10;
+        animation: slide1 18.5s ease-in-out alternate infinite;
+      }
+      @keyframes slide1 {
+        from {margin-left: 100px}
+        to {margin-left: 900px}
+      }
+      .cloud::before{
+        content: '';
+        position: absolute;
+        top: -50px;
+        left: 40px;
+        width: 110px;
+        height: 110px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 90px 0 0 30px white;
+      }
+      .cloud2 {
+        margin-left: 800px;
+        top: 100px;
+        animation: slide2 18.5s ease-in-out alternate infinite;
+      }
+      @keyframes slide2 {
+        from {margin-left: 800px}
+        to {margin-left: 100px}
+      }
+    </style>
+</head>
+<body>
+    <div id="sun"></div>
+
+    <div class="hill hill1"></div>
+    <div class="hill hill2"></div>
+    <div class="hill hill3"></div>
+    <div class="hill hill4"></div>
+    <div class="hill hill5"></div>
+
+    <div id="land"></div>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+</body>
+</html>
